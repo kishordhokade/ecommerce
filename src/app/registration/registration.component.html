@@ -1,0 +1,45 @@
+
+
+<div style='background-color: #605f5f;height: 100vh;overflow: hidden;'>
+	<div class="row" style='height: 50px;'>
+	</div>
+	<div class='row col-md-12' >
+		<div class='col-md-4'>
+		</div>
+		<div class='col-md-4' style='background-color: #f9f3f3;border: 1px black;    display: flex;justify-content: center;border-radius: 12px;padding-top: 30px;padding-bottom: 30px'>
+			<form [formGroup]='userForm'>
+
+				<label>First Name</label>
+				<div class="input-group mb-3">
+	      			<input type="text"   formControlName='firstname' aria-describedby="basic-addon1">
+	    		</div>
+
+	    		<label>Last Name</label>
+			    <div class="input-group mb-3">
+			      <input type="text"   formControlName='lastname' aria-describedby="basic-addon1">
+			    </div>
+
+			    <label>Email-Id</label>
+			    <div class="input-group mb-3">
+			     	<input type="text"   formControlName='emailid' aria-describedby="basic-addon1">
+			    </div>
+			    
+			    <label>Password</label>
+			       <div class="input-group mb-3">
+			      <input type="password"   formControlName='password' aria-describedby="basic-addon1">
+			    </div>	
+
+	    		<label>Confirm Password</label>
+	        	<div class="input-group mb-3">
+	      			<input type="password"   formControlName='confirmpassword' aria-describedby="basic-addon1">
+	    		</div>
+	    		<div class="alert alert-danger" role="alert" *ngIf='passwordCheck'>
+	    			Password and Confirm Password does not match
+               </div>
+	    		<button class="btn btn-primary" type="button" (click)='submit()' [disabled]="!userForm.valid" style="margin-left: 40px;margin-top: 20px;">Register</button>
+	    	</form>
+		</div>
+		<div class='col-md-4'>
+		</div>
+	</div>
+</div>
